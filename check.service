@@ -1,0 +1,19 @@
+[Unit]
+Description=Service check exited docker containers
+After=network.target  
+
+[Service]
+ExecStart=/home/x/systemd/check.sh
+Restart=always
+WorkingDirectory=/home/x/systemd
+User=x
+Group=x
+Environment=GOPATH=/home/systemd/go
+TimeoutSec=30s
+RestartSec=15s
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=check
+
+[Install]
+WantedBy=multi-user.target
