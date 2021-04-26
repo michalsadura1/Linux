@@ -14,9 +14,6 @@ systemctl start check
 stop service
 systemctl stop check
 
-stop service
-systemctl stop check
-
 enable
 systemctl enable check
 
